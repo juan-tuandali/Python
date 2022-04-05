@@ -51,7 +51,7 @@ elif (prestasi == 1):
 total_bonus = bonus_awal + bonus_jabatan + bonus_prestasi
     
 # output
-print("\nNama :",nama,"(",nik,")")
+print("\nNama :",nama," (",nik,")",sep="")
 print("--------------------------------")
 print("Gaji :",gaji)
 print("Bonus awal :",bonus_awal)
