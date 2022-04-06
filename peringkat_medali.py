@@ -1,3 +1,15 @@
+    # Kamus Data :
+    # negara1 : var. input (string)
+    # emas1 : var. input (integer)
+    # perak1 : var. input (integer)
+    # perunggu1 : var. input (integer)
+    # negara2 : var. input (string)
+    # emas2 : var. input (integer)
+    # perak2 : var. input (integer)
+    # perunggu2 : var. input (integer)
+    # total_medali1 : var. penampung total medali negara 1
+    # total_medali2 : var. penampung total medali negara 2
+    
     # input
     negara1 = str(input("Negara : "))
     emas1 = int(input("Emas : "))
