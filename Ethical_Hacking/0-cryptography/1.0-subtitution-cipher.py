@@ -18,4 +18,4 @@ for i in range(len(alphabeth)):
             
         result += key[loc_char] # panggil hasil dari key sesuai dengan lokasi karakter
     
-print(f'Hasil enkripsi dari "{string}" : {result}') 
+print(f'Hasil enkripsi dari "{string}" : {result}')
