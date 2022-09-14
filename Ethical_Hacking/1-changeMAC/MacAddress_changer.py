@@ -42,8 +42,8 @@ subprocess.call("ifconfig eth0", shell=True)
 print("-" * 60)
 print()
 
-interface = options.interface  # interface = input("Interface: ")
-newMAC = options.newMAC  # newMAC = input("Enter the new MAC Address: ")
+interface = options.interface 
+newMAC = options.newMAC 
 print("MAC ADDRESS AFTER CHANGE")
 
 (options, arguments) = getArguments() # panggil function dalam variabel
