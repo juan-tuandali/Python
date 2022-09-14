@@ -3,6 +3,7 @@ import subprocess
 # memanggil module optparse (untuk dapat menangkap argument yang dimasukkan user agar bisa digunakan dengan program)
 import optparse
 
+# start function
 def getArguments():
     parser = optparse.OptionParser()  # memanggil fungsi ini agar dapat menangkap command/perintah
 
@@ -22,8 +23,21 @@ def getArguments():
         help="New MAC Address"
     )  
 
-    return parser.parse_args() # untuk bisa menampilkan semua argumen yang dapat dipakai dan me-return nilai dari argument yang ada
+    (options, arguments) = parser.parse_args()
     
+    if not options.interface and not options.newMAC:
+        parser.error(
+            "[-] Please specify an interface and new MAC, use --help or -h for more info."
+        )  # untuk menampilkan kesalahan saat tidak ada input yang dimasukkan oleh user
+    elif not options.interface:
+        parser.error(
+            "[-] Please specify an interface, use --help or -h for more info."
+        )  # untuk menampilkan kesalahan karena user tidak memasukkan interface yang dituju
+    elif not options.newMAC:
+        parser.error(
+            "[-] Please specify a new MAC Address, use --help or -h for more info."
+        )  # untuk menampilkan kesalahan karena user tidak memasukkan MAC baru yang dituju
+    return options 
 # end function
 
 # start function (fungsi mengubah MAC Address)
@@ -42,10 +56,8 @@ subprocess.call("ifconfig eth0", shell=True)
 print("-" * 60)
 print()
 
-interface = options.interface 
-newMAC = options.newMAC 
 print("MAC ADDRESS AFTER CHANGE")
 
-(options, arguments) = getArguments() # panggil function dalam variabel
+options = getArguments() # panggil function sebagai variabel
 changeMAC(options.interface, options.newMAC) # panggil function
 
