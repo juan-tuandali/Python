@@ -1,11 +1,10 @@
 import scapy.all as scapy # memanggil module scapy untuk dapat melakukan scanning paket jaringan
-import subprocess as sub
 import optparse as opt
 
 # start fucntion
 def get_aruments():
     parser = opt.OptionParser()  # memanggil fungsi ini agar dapat menangkap command/perntah
-    # argument untuk input interface
+    # argument untuk input
     parser.add_option(
         "-t",  # menangkap argument/command -t (target)
         "--target",  # or bisa juga meggunakan --target  
