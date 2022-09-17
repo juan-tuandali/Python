@@ -2,7 +2,7 @@ import scapy.all as scapy # memanggil module scapy untuk dapat melakukan scannin
 import argparse as arg
 
 # start fucntion
-def get_aruments():
+def get_arguments():
     parser = arg.ArgumentParser()  # memanggil fungsi ini agar dapat menangkap command/perintah
     # argument untuk input
     parser.add_argument(
@@ -51,7 +51,7 @@ def print_result(result_list):
 
 # start function utama
 def main():
-    options = get_aruments()
+    options = get_arguments()
     scan_result = scan(options.target) 
     print_result(scan_result)
     
