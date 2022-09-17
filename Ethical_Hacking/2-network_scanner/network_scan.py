@@ -3,7 +3,7 @@ import argparse as arg
 
 # start fucntion
 def get_aruments():
-    parser = arg.ArgumentParser()  # memanggil fungsi ini agar dapat menangkap command/perntah
+    parser = arg.ArgumentParser()  # memanggil fungsi ini agar dapat menangkap command/perintah
     # argument untuk input
     parser.add_argument(
         "-t",  # menangkap argument/command -t (target)
