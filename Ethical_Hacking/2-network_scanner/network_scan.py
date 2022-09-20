@@ -19,17 +19,12 @@ def get_arguments():
 # end def
 # start function
 def scan(ip):
-    print("-"*50)
-    
+   
     # memanggil fungsi .ARP untuk kita menjalankan request arp pada jaringan yang dituju
     arp_request = scapy.ARP(pdst=ip)  # pdst adalah fungsi dalam scapy.ARP untuk menambahkan ip address
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff") # memberikan MAC Address yang dituju
     arp_request_broadcast = broadcast/arp_request # membuat variabel untuk mengkombinasi arp_request dan broadcast
-    
-    print(arp_request_broadcast.summary()) # .summary artinya meringkas hasil object (packet) dari hasil program kita
-    
-    print("-"*50)
-    
+
     answered_list = scapy.srp(arp_request_broadcast, timeout=2, verbose=False)[0] # memanggil fungsi .sr (send /recieved) untuk mengirim / menerima packet data
     
     clients_list = [] # membuat list kosong untuk nantinya menampung dictionary yang kita buat
@@ -41,6 +36,7 @@ def scan(ip):
 # end def
 # start function
 def print_result(result_list):
+    print("-"*30)
     for client in result_list:
         print("IP: ", end="")
         print(client["ip"]) # karena sudah berbentuk dictionary, maka kita dapat memanggilnya dengan key bukan index
