@@ -1,0 +1,3 @@
+Program ini bertujuan untuk melakukan pelacakan / pengambilan paket dengan cara
+kita menjadi MITM pada komputer korban dan access point, sehingga kita dapat
+menangkap request dan response yang berlangsung
