@@ -1,0 +1,2 @@
+Program ini adalah program yang dimana kita melakukan suatu tindakan dalam jaringan yang menipu komputer victim bahwa kita adalah access point (router/sumber internet) yang
+mengirim respon dari yang di request, dan juga menipu access point bahwa kita adalah komputer korban yang mengirim request tersebut.
