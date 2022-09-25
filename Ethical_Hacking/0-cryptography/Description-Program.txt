@@ -1,0 +1,3 @@
+Progam kriptografi adalah program yang akan melindungi data, yang dimana 
+data-data tersebut akan di enkripsi menjadi suatu pola yang tidak dimengerti oleh siapapun
+kecuali yang mempunyai kunci untuk melakukan dekripsi pada paket/data tersebut
