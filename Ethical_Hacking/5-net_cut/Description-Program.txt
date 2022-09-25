@@ -1,0 +1,2 @@
+Program ini adalah program yang berguna untuk menangkap packet-packet dari request 
+komputer korban dengan NetfilterQueue
