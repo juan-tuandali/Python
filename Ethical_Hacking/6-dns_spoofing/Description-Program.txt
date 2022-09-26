@@ -1,0 +1,3 @@
+Program ini adalah lanjutan dari net_cut.py, yang dimana pada program ini
+bukan hanya menjadi MITM dan menangkap paket, tetapi juga kita memanipulas dan memodifikasi
+paket sesuai dengan yang kita mau.
