@@ -8,13 +8,13 @@ def get_args(): # funct untuk menangkap argument yang di input
         "-t",
         "--target",
         dest="target",
-        help="Target IP Address and MAC Address"
+        help="Target IP Address"
     )
     parser.add_argument(
         "-s",
         "--source",
         dest="source",
-        help="Target IP Address and MAC Address"
+        help="Source IP Address "
     )
 
     options = parser.parse_args()
