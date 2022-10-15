@@ -1,0 +1,4 @@
+Program untuk me-replace packet yang di download dari website menjadi file atau packet yang sudah kita siapkan. 
+Sehingga yang akan di terdownload adalah file buatan kita, bukan file yang benar dari website tersebut.
+NOTE: 
+    * PROGRAM HANYA BERJALAN PADA LINK HTTP
