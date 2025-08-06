@@ -1,2 +1,2 @@
 # Program_Python
-Belajar Python
+Learn Python for Cyber Security purpose.
